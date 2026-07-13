@@ -13,11 +13,28 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name', 100)->nullable();
+            $table->string('email', 100)->unique()->nullable();
+            $table->string('phone', 15)->unique()->nullable();
+            $table->string('password_hash', 255)->nullable();
+            $table->string('google_id', 255)->nullable();
+            $table->string('avatar', 255)->nullable();
+            $table->enum('role', [
+                'super_admin',
+                'hospital_admin',
+                'doctor',
+                'nurse',
+                'receptionist',
+                'cashier',
+                'patient',
+            ]);
+            $table->string('patient_id', 50)->unique()->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->timestamp('phone_verified_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->timestamp('last_login_at')->nullable();
+            $table->string('last_login_ip', 45)->nullable();
+            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
 
