@@ -1,12 +1,29 @@
 <?php
 
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// Root / Welcome redirects to login
-Route::get('/', function () {
-    return redirect('/auth/login');
-});
+// --- GUEST/PUBLIC SEO BLADE VIEWS (No login required) ---
+Route::get('/', [PublicController::class, 'index']);
+Route::get('/doctors', [PublicController::class, 'doctors']);
+Route::get('/doctor/{id}', [PublicController::class, 'doctorProfile']);
+Route::get('/about', [PublicController::class, 'about']);
+Route::get('/contact', [PublicController::class, 'contact']);
+Route::post('/contact', [PublicController::class, 'contactSubmit']);
+Route::get('/services', [PublicController::class, 'services']);
+Route::get('/services/{id}', [PublicController::class, 'serviceDetails']);
+Route::get('/departments', [PublicController::class, 'departments']);
+Route::get('/news', [PublicController::class, 'news']);
+Route::get('/news/{id}', [PublicController::class, 'newsDetails']);
+Route::get('/faq', [PublicController::class, 'faq']);
+Route::get('/terms', [PublicController::class, 'terms']);
+Route::get('/privacy', [PublicController::class, 'privacy']);
+Route::get('/login', [PublicController::class, 'login']);
+Route::get('/register', [PublicController::class, 'register']);
+
+
+// --- SECURE REACT PORTALS (Inertia.js pages) ---
 
 // Authentication Pages
 Route::prefix('auth')->group(function () {
@@ -20,6 +37,10 @@ Route::prefix('auth')->group(function () {
 
     Route::get('admin-login', function () {
         return Inertia::render('Auth/AdminLogin');
+    });
+
+    Route::get('register', function () {
+        return Inertia::render('Auth/Login'); // Registered patients can log in via OTP
     });
 });
 
@@ -48,7 +69,7 @@ Route::prefix('patient')->group(function () {
 // Doctor Views
 Route::prefix('doctor')->group(function () {
     Route::get('dashboard', function () {
-        return Inertia::render('Patient/Dashboard'); // Standard patient dashboard simulator or similar
+        return Inertia::render('Patient/Dashboard');
     });
     Route::get('profile', function () {
         return Inertia::render('Doctor/Profile');

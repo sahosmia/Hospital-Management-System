@@ -17,6 +17,8 @@ class Doctor extends Model
         'experience_years',
         'qualifications',
         'chamber_location',
+        'department_id',
+        'is_featured',
     ];
 
     protected function casts(): array
@@ -26,11 +28,22 @@ class Doctor extends Model
             'surgery_fee' => 'decimal:2',
             'experience_years' => 'integer',
             'qualifications' => 'json',
+            'is_featured' => 'boolean',
         ];
     }
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(DoctorReview::class, 'doctor_id', 'user_id');
     }
 }

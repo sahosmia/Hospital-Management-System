@@ -1,8 +1,8 @@
 <?php
 
-test('the application redirects from root to login', function () {
+test('the application returns public landing home', function () {
     $response = $this->get('/');
-    $response->assertStatus(302);
+    $response->assertStatus(200);
 });
 
 test('the application returns login view', function () {
