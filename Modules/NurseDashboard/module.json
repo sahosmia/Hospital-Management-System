@@ -1,0 +1,11 @@
+{
+    "name": "NurseDashboard",
+    "alias": "nursedashboard",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\NurseDashboard\\Providers\\NurseDashboardServiceProvider"
+    ],
+    "files": []
+}

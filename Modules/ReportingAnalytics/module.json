@@ -1,0 +1,11 @@
+{
+    "name": "ReportingAnalytics",
+    "alias": "reportinganalytics",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ReportingAnalytics\\Providers\\ReportingAnalyticsServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "PatientManagement",
+    "alias": "patientmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PatientManagement\\Providers\\PatientManagementServiceProvider"
+    ],
+    "files": []
+}

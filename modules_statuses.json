@@ -1,0 +1,17 @@
+{
+    "AuthUserManagement": true,
+    "PatientManagement": true,
+    "DoctorAppointment": true,
+    "BedAdmission": true,
+    "TreatmentMedication": true,
+    "SurgeryOT": true,
+    "InventorySupplies": true,
+    "BillingFinance": true,
+    "RatingsReviews": true,
+    "ReportingAnalytics": true,
+    "NurseDashboard": true,
+    "AdminDashboard": true,
+    "PatientDashboard": true,
+    "AppointmentList": true,
+    "ReviewForm": true
+}
