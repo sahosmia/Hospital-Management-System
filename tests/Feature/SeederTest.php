@@ -25,7 +25,7 @@ it('verifies that the database has been successfully seeded with core data', fun
     expect(Bed::count())->toBe(8);
     expect(OperationTheater::count())->toBe(3);
     expect(SurgicalSupply::count())->toBe(8);
-    expect(SystemSetting::count())->toBe(5);
+    expect(SystemSetting::count())->toBe(22);
 
     // Verify relations
     $doctor = Doctor::first();

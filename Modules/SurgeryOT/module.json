@@ -1,0 +1,11 @@
+{
+    "name": "SurgeryOT",
+    "alias": "surgeryot",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SurgeryOT\\Providers\\SurgeryOTServiceProvider"
+    ],
+    "files": []
+}

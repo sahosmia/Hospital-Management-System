@@ -1,0 +1,11 @@
+{
+    "name": "BedAdmission",
+    "alias": "bedadmission",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\BedAdmission\\Providers\\BedAdmissionServiceProvider"
+    ],
+    "files": []
+}

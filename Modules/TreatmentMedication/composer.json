@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/treatmentmedication",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TreatmentMedication\\": "app/",
+            "Modules\\TreatmentMedication\\Database\\Factories\\": "database/factories/",
+            "Modules\\TreatmentMedication\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TreatmentMedication\\Tests\\": "tests/"
+        }
+    }
+}

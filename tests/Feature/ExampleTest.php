@@ -1,5 +1,13 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+beforeEach(function () {
+    $this->seed();
+});
+
 test('the application returns public landing home', function () {
     $response = $this->get('/');
     $response->assertStatus(200);

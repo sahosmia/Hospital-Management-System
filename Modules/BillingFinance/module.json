@@ -1,0 +1,11 @@
+{
+    "name": "BillingFinance",
+    "alias": "billingfinance",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\BillingFinance\\Providers\\BillingFinanceServiceProvider"
+    ],
+    "files": []
+}

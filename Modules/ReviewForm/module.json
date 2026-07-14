@@ -1,0 +1,11 @@
+{
+    "name": "ReviewForm",
+    "alias": "reviewform",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ReviewForm\\Providers\\ReviewFormServiceProvider"
+    ],
+    "files": []
+}
