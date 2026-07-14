@@ -327,6 +327,6 @@ return [
     |
     */
     'inertia' => [
-        'frontend' => 'vue',
+        'frontend' => 'react',
     ],
 ];
