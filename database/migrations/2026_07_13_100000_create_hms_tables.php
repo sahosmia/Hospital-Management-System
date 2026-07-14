@@ -95,7 +95,7 @@ return new class extends Migration
             $table->text('notes')->nullable();
             $table->timestamps();
 
-            $table->index(['patient_id', 'doctor_id', 'appointment_date', 'status']);
+            $table->index(['patient_id', 'doctor_id', 'appointment_date', 'status'], 'appts_pat_doc_date_status_index');
         });
 
         // 7. admissions
@@ -292,7 +292,7 @@ return new class extends Migration
             $table->timestamp('performed_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
 
-            $table->index(['supply_id', 'surgery_id', 'transaction_type']);
+            $table->index(['supply_id', 'surgery_id', 'transaction_type'], 'inv_trans_supply_surg_type_index');
         });
 
         // 15. financial_transactions
@@ -319,7 +319,7 @@ return new class extends Migration
             $table->timestamp('approved_at')->nullable();
             $table->timestamps();
 
-            $table->index(['admission_id', 'category', 'posting_date']);
+            $table->index(['admission_id', 'category', 'posting_date'], 'fin_trans_admit_cat_date_index');
         });
 
         // 16. doctor_reviews
