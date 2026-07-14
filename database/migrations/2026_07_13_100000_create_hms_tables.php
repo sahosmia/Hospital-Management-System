@@ -176,7 +176,7 @@ return new class extends Migration
             $table->text('notes')->nullable();
             $table->timestamps();
 
-            $table->index(['medication_order_id', 'admission_id', 'administered_date']);
+            $table->index(['medication_order_id', 'admission_id', 'administered_date'], 'med_admin_order_admit_date_index');
         });
 
         // 11. operation_theaters
@@ -237,7 +237,7 @@ return new class extends Migration
             $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
             $table->timestamps();
 
-            $table->index(['patient_id', 'surgeon_id', 'ot_id', 'scheduled_date', 'status']);
+            $table->index(['patient_id', 'surgeon_id', 'ot_id', 'scheduled_date', 'status'], 'surgeries_pat_surg_ot_date_status_index');
         });
 
         // Complete the circular dependency on operation_theaters
